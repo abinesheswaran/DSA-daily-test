@@ -55,3 +55,23 @@ const mergesort = (arr) => {
   const right = mergesort(arr.slice(mid));
   return merge(left, right);
 };
+const partition = (arr, low, high) => {
+  const pivot = arr[high];
+  let i = low - 1;
+  for (let j = low; j < high; j++) {
+    if (arr[j] < pivot) {
+      i++;
+      [arr[j], arr[i]] = [arr[i], arr[j]];
+    }
+  }
+  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+  return i + 1;
+};
+const quicksort = (arr, low = 0, high = arr.length - 1) => {
+  if (low < high) {
+    const p = partition(arr, low, high);
+    quicksort(arr, low, p - 1);
+    quicksort(arr, p + 1, high);
+  }
+  return arr;
+};
