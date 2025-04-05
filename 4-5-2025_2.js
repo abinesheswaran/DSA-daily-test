@@ -83,7 +83,6 @@ const dfPostorder = (bt) => {
   console.log(bt.v);
 };
 
-
 const bst = new BinarySearchTree();
 bst.add(10);
 bst.add(5);
@@ -91,14 +90,14 @@ bst.add(15);
 bst.add(3);
 bst.add(7);
 
-console.log("BFS:");
+console.log('BFS:');
 bf(bst.head);
 
-console.log("DFS Inorder:");
+console.log('DFS Inorder:');
 dfInorder(bst.head);
 
-console.log("DFS Preorder:");
+console.log('DFS Preorder:');
 dfPreorder(bst.head);
 
-console.log("DFS Postorder:");
+console.log('DFS Postorder:');
 dfPostorder(bst.head);
