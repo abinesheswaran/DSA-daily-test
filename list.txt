@@ -1,0 +1,51 @@
+selectionsort
+bubblesort
+insertionsort
+mergesort
+quicksort
+
+binary search tree
+*add 
+*isPresent
+*findMin
+*delete
+*getHeight
+*isBalanced
+
+breath first 
+breath first search
+
+depth first
+depth first search
+*inorder
+*preorder
+*postorder
+
+queue
+*enqueue
+*dequeue
+*print
+
+stack
+*push
+*pop
+*print
+
+heap
+*getfirst
+*push
+*remove
+*print
+
+minheap
+*getmin
+*add
+*deleteroot
+*print
+
+maxheap
+*getmax
+*add
+*deleteroot
+*print
+
