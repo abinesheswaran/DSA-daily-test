@@ -49,6 +49,45 @@ class BinarySearchTree {
     }
     return false;
   }
+  findMin(node) {
+    let temp = node ?? this.head;
+    while (true) {
+      if (!temp.l) return temp;
+      temp = temp.l;
+    }
+  }
+  delete(v) {
+    const deletenode = (node, v) => {
+      if (!node) return null;
+      if (v < node.v) node.l = deletenode(node.l, v);
+      else if (v > node.v) node.r = deletenode(node.r, v);
+      else {
+        if (!node.r && !node.l) return null;
+        if (!node.r) return node.l;
+        if (!node.l) return node.r;
+
+        const successor = this.findMin(node.r);
+        node.v = successor.v;
+        node.r = deletenode(node.r, successor.v);
+      }
+      return node;
+    };
+    this.head = deletenode(this.head, v);
+  }
+  getHeight(node) {
+    if (!node) return -1;
+    return 1 + Math.max(this.getHeight(node.l), this.getHeight(node.r));
+  }
+  isBalanced = (node) => {
+    if (!node) return true;
+    const lheight = this.getHeight(node.l);
+    const rheight = this.getHeight(node.r);
+    return (
+      Math.abs(lheight - rheight) <= 1 &&
+      this.isBalanced(node.l) &&
+      this.isBalanced(node.r)
+    );
+  };
 }
 
 const bf = (bt) => {
@@ -83,21 +122,37 @@ const dfPostorder = (bt) => {
   console.log(bt.v);
 };
 
-const bst = new BinarySearchTree();
-bst.add(10);
-bst.add(5);
-bst.add(15);
-bst.add(3);
-bst.add(7);
+const tree = new BinarySearchTree();
+tree.add(10);
+tree.add(5);
+tree.add(15);
+tree.add(3);
+tree.add(7);
+tree.add(12);
+tree.add(18);
 
 console.log('BFS:');
-bf(bst.head);
+bf(tree.head);
 
-console.log('DFS Inorder:');
-dfInorder(bst.head);
+console.log('Inorder DFS (should be sorted):');
+dfInorder(tree.head);
 
-console.log('DFS Preorder:');
-dfPreorder(bst.head);
+console.log('Preorder DFS:');
+dfPreorder(tree.head);
 
-console.log('DFS Postorder:');
-dfPostorder(bst.head);
+console.log('Postorder DFS:');
+dfPostorder(tree.head);
+
+console.log('Tree is balanced:', tree.isBalanced(tree.head));
+console.log('Tree height:', tree.getHeight(tree.head));
+
+tree.delete(10); // deleting root
+console.log('Inorder after deletion:');
+dfInorder(tree.head);
+
+tree.add(100)
+console.log('Inorder after deletion:');
+dfInorder(tree.head);
+
+console.log('Tree is balanced:', tree.isBalanced(tree.head));
+console.log('Tree height:', tree.getHeight(tree.head));
