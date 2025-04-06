@@ -3,6 +3,7 @@ bubblesort
 insertionsort
 mergesort
 quicksort
+binarysearch
 
 binary search tree
 *add 
