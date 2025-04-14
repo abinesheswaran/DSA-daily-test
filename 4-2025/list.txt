@@ -33,6 +33,12 @@ stack
 *print
 
 heap
+*getleft
+*getright
+*getparent
+*swap
+*heapdown
+*heapup
 *getfirst
 *push
 *remove
