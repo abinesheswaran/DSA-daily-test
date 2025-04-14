@@ -1,14 +1,13 @@
-
 const minheap = new MinHeap();
-minheap.add(8);
-minheap.add(2);
-minheap.add(4);
-minheap.add(5);
-minheap.add(1);
-minheap.add(7);
-minheap.add(3);
-minheap.add(6);
+minheap.push(8);
+minheap.push(2);
+minheap.push(4);
+minheap.push(5);
+minheap.push(1);
+minheap.push(7);
+minheap.push(3);
+minheap.push(6);
 minheap.print();
 console.log('_________________________________');
-minheap.delete();
+minheap.remove();
 minheap.print();
