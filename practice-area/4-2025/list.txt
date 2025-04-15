@@ -4,6 +4,7 @@ insertionsort
 mergesort
 quicksort
 binarysearch
+______________________________________
 
 binary search tree
 *add 
@@ -12,27 +13,9 @@ binary search tree
 *delete
 *getHeight
 *isBalanced
+_________________________________
 
-breath first 
-breath first search
-
-depth first
-depth first search
-*inorder
-*preorder
-*postorder
-
-queue
-*enqueue
-*dequeue
-*print
-
-stack
-*push
-*pop
-*print
-
-heap
+Minheap
 *getleft
 *getright
 *getparent
@@ -43,16 +26,25 @@ heap
 *push
 *remove
 *print
+______________________________________
 
-minheap
-*getmin
-*add
-*deleteroot
+breath first 
+breath first search
+
+depth first
+depth first search
+*inorder
+*preorder
+*postorder
+_________________________________
+
+queue
+*enqueue
+*dequeue
 *print
 
-maxheap
-*getmax
-*add
-*deleteroot
+stack
+*push
+*pop
 *print
 
