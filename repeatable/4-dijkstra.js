@@ -1,3 +1,19 @@
+class PQ {
+  constructor() {
+    this.arr = [];
+  }
+  enqueue(v, p) {
+    this.arr.push({ v, p });
+    this.arr.sort((a, b) => a.p - b.p);
+  }
+  dequeue() {
+    return this.arr.pop();
+  }
+  isEmpty() {
+    return this.arr.length === 0;
+  }
+}
+
 const graph = {
   A: [
     { node: 'B', weight: 2 },

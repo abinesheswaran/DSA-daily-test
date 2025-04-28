@@ -1,3 +1,17 @@
+class Node {
+  constructor(v) {
+    this.v = v;
+    this.l = null;
+    this.r = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.h = null;
+  }
+}
+
 const tree = new BST();
 
 // Add nodes
